@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block center %}
+<form action="{{ url_for('edit_post', id=post.id) }}" method="post">
+    <div class="form-group">
+        <label>Назва пиці</label>
+        <Input type="text" name="title" class="form-control" value="{{ request.form.get('title') or post.title }}">
+    </div>
+    <div class="form-group">
+        <label>Інградієнти:</label>
+        <input type="text" name="text" class="form-control" value="{{ request.form.get('text') or post.text }}">
+    </div>
+    <button class="btn btn-primary">Редагувати пицю</button>
+</form>
+{% endblock center %}

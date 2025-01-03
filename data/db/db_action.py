@@ -54,3 +54,11 @@ def del_post(id) -> None:
         post = session.query(Post).filter_by(id=id).first()
         session.delete(post)
         session.commit()
+
+
+def edit_post(id, title, text) -> None:
+    with Session() as session:
+        post = session.query(Post).where(Post.id==id).first()
+        post.title = title
+        post.text = text
+        session.commit()

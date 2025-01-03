@@ -3,14 +3,15 @@
 {% block center %}
 <form action="{{ url_for('add_post') }}" method="post">
     <div class="form-group">
-        <label>Назва статті</label>
+        <label>Назва пиці</label>
         <Input type="text" name="title" class="form-control">
     </div>
     <div class="form-group">
-        <label>Текст статті</label>
+        <label>Інградієнти пиці</label>
         <textarea name="text" class="form-control"></textarea>
     </div>
     <div class="form-group">
+        <label>Повар пиці</label>
         <select name="author_id" class="form-control">
             {% for author in authors %}
                 <option value="{{ author.id }}">{{ author }}</option>
@@ -18,6 +19,6 @@
         </select>
 
     </div>
-    <button class="btn btn-primary">Додати статтю</button>
+    <button class="btn btn-primary">Додати пицю</button>
 </form>
 {% endblock center %}
